@@ -1,0 +1,80 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:700);
+/* @import url(https://fonts.googleapis.com/css?family=Crimson+Text:regular,italic,600,600italic,700,700italic); */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222220;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 1rem;
+  background: #ffffff4d;
+  backdrop-filter: blur(2.5px);
+  border-top: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .header {
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__btn-grp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.375rem;
+  }
+  .header__logo {
+    color: #fff;
+    font-family: "Crimson Text";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.6rem;
+    text-decoration: none;
+    border-bottom: 2px solid #fff;
+  }
+  .header__btn {
+    color: #fff;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    height: 4rem;
+  }
+  .header__wrapper {
+    max-width: 1440px;
+  }
+  .header__logo {
+    font-size: 3.75rem;
+    line-height: 3.1rem;
+    border-bottom: 4px solid #fff;
+  }
+  .header__btn {
+    font-size: 1.5rem;
+  }
+}
