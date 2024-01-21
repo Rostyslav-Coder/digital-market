@@ -25,6 +25,7 @@ body {
 .banner {
   width: 100%;
   height: 100vh;
+  min-height: 100svh;
   padding: 22.4% 0;
   background-image: url(../img/banner/banner-bg_img.png);
   background-size: auto 100%;
@@ -89,14 +90,20 @@ body {
   text-transform: capitalize;
 }
 
-.about {
+.about,
+.servise {
   width: 100%;
   min-height: 100vh;
   padding: 22.4% 0;
   background-color: #282828;
 }
 
-.about__wrapper {
+.servise {
+  background-color: #222220;
+}
+
+.about__wrapper,
+.service__wrapper {
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -104,15 +111,18 @@ body {
   gap: 2rem;
 }
 
-.about__img {
-  word-wrap: 100%;
-}
-
-.about__img > img {
+.about__img,
+.service__img-block {
   width: 100%;
 }
 
-.about__text-block {
+.about__img > img,
+.service__img-block > img {
+  width: 100%;
+}
+
+.about__text-block,
+.service__text-block {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -121,7 +131,8 @@ body {
   gap: 1.875rem;
 }
 
-.about__title {
+.about__title,
+.service__title {
   color: #f90;
   text-align: right;
   font-family: "Inter", sans-serif;
@@ -131,7 +142,20 @@ body {
   line-height: normal;
   text-transform: uppercase;
 }
-.about__text {
+
+.service__title-sml {
+  color: #f90;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+}
+
+.about__text,
+.service__text {
   color: #cdcdcd;
   text-align: right;
   font-family: "Inter", sans-serif;
@@ -139,6 +163,10 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.service__text {
+  text-align: left;
 }
 
 .about__btn {
@@ -204,17 +232,26 @@ body {
   .banner__container {
     height: 23%;
   }
-  .about {
+  .about,
+  .servise {
     padding: 7% 0;
   }
-  .about__wrapper {
+  .about__wrapper,
+  .service__wrapper {
     flex-direction: row;
   }
-  .about__img {
+  .about__img,
+  .service__img-block {
     width: 45%;
-    margin-top: 1%;
   }
-  .about__text-block {
+  .about__img {
+    margin-top: 7.5%;
+  }
+  .service__img-block > img {
+    margin-top: 10%;
+  }
+  .about__text-block,
+  .service__text-block {
     width: 50%;
   }
 }
@@ -252,7 +289,8 @@ body {
   .banner__social > img {
     width: 1.5rem;
   }
-  .about__text {
+  .about__text,
+  .service__text {
     font-size: 1.5rem;
   }
   .about__btn {
