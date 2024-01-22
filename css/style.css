@@ -7,8 +7,57 @@
   box-sizing: border-box;
 }
 
+@keyframes spreading-apart {
+  7.5% {
+    width: 100%;
+  }
+  25% {
+    width: 0%;
+  }
+  75% {
+    width: 0%;
+  }
+  90% {
+    width: 100%;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+  30% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scrolling-left {
+  0% {
+    transform: translate(calc(-80% - 0.5rem));
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scrolling-right {
+  0% {
+    transform: translate(calc(80% + 0.5rem));
+    opacity: 0;
+  }
+  25% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+
 body {
   background-color: #222220;
+  overflow-x: hidden;
 }
 
 img {
@@ -23,6 +72,7 @@ img {
   backdrop-filter: blur(2.5px);
   border-top: 2px solid #aaa;
   border-bottom: 2px solid #aaa;
+  z-index: 1000;
   display: none;
 }
 
@@ -64,17 +114,11 @@ img {
 
 .banner__social > img {
   width: 2rem;
+  cursor: pointer;
 }
 
-.banner__logo {
-  color: #f90;
-  text-align: center;
-  font-family: "Crimson Text", serif;
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-decoration-line: underline;
+.banner__logo > img {
+  height: 48px;
 }
 
 .banner__title {
@@ -140,10 +184,24 @@ img {
 .service__img-block,
 .contact__img {
   width: 100%;
+  position: relative;
+}
+
+.about__img > img {
+  border: 2px solid #282828;
+}
+
+.service__img-block > img {
+  border: 2px solid #222220;
+}
+
+.contact__img > img {
+  border: 2px solid #222220;
 }
 
 .about__text-block,
 .service__text-block {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -164,10 +222,19 @@ img {
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+  z-index: 3;
+}
+
+.about__title,
+.contact__title {
+  animation: scrolling-right linear;
+  animation-timeline: view();
 }
 
 .review__title {
   text-align: center;
+  animation: scrolling-right linear;
+  animation-timeline: view();
 }
 
 .service__title-sml,
@@ -180,6 +247,9 @@ img {
   line-height: normal;
   text-transform: capitalize;
   padding-bottom: 1rem;
+  z-index: 3;
+  animation: scrolling-left linear;
+  animation-timeline: view();
 }
 
 .about__text,
@@ -219,9 +289,13 @@ img {
   font-weight: 800;
   line-height: normal;
   text-transform: uppercase;
+  z-index: 3;
+  animation: fade-in linear;
+  animation-timeline: view();
 }
 
 .review__card-grp {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -241,6 +315,9 @@ img {
   border: 2px solid #f90;
   background: #fff;
   box-shadow: 1rem 1rem 2rem 0px #00000040;
+  z-index: 5;
+  animation: fade-in linear;
+  animation-timeline: view();
 }
 
 .review__stars {
@@ -267,6 +344,24 @@ img {
   height: 4rem;
 }
 
+.damper__about,
+.damper__service,
+.damper__contact {
+  position: absolute;
+  top: 0;
+  background-color: #282828;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  animation: spreading-apart linear;
+  animation-timeline: view();
+}
+
+.damper__contact,
+.damper__service {
+  background-color: #222220;
+}
+
 @media (min-width: 600px) {
   .header {
     height: 2rem;
@@ -286,26 +381,20 @@ img {
     align-items: center;
     gap: 1.375rem;
   }
-  .header__logo {
-    color: #f90;
-    font-family: "Crimson Text";
-    font-size: 2rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.6rem;
-    text-decoration: none;
+  .header__logo > img {
+    height: 1.5rem;
   }
   .header__btn {
     color: #f90;
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-decoration: none;
   }
   .header__btn > img {
-    width: 1.2rem;
+    width: 1rem;
   }
   .banner {
     padding: 7% 10%;
@@ -356,12 +445,19 @@ img {
   .header {
     height: 4rem;
   }
-  .header__wrapper {
+  .header__wrapper,
+  .about__wrapper,
+  .service__wrapper,
+  .review__wrapper,
+  .contact__wrapper {
     max-width: 1440px;
   }
   .header__logo {
     font-size: 3.75rem;
     line-height: 3.1rem;
+  }
+  .header__logo > img {
+    height: 2.5rem;
   }
   .header__btn {
     font-size: 1.5rem;
