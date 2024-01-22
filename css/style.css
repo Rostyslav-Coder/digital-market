@@ -41,29 +41,37 @@
   0% {
     transform: scale(0.8);
     opacity: 0.2;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
   }
   30% {
     transform: scale(1);
     opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
   }
 }
 
 @keyframes fade-in {
   0% {
     transform: scale(0.8);
+    opacity: 0.2;
     -webkit-transform: scale(0.8);
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
-    opacity: 0.2;
   }
   30% {
     transform: scale(1);
+    opacity: 1;
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
     -o-transform: scale(1);
-    opacity: 1;
   }
 }
 
@@ -71,29 +79,37 @@
   0% {
     transform: translate(calc(-80% - 0.5rem));
     opacity: 0.2;
+    -webkit-transform: translate(calc(-80% - 0.5rem));
+    -moz-transform: translate(calc(-80% - 0.5rem));
+    -ms-transform: translate(calc(-80% - 0.5rem));
+    -o-transform: translate(calc(-80% - 0.5rem));
   }
   25% {
     transform: translate(0);
     opacity: 1;
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
   }
 }
 
 @keyframes scrolling-left {
   0% {
     transform: translate(calc(-80% - 0.5rem));
+    opacity: 0.2;
     -webkit-transform: translate(calc(-80% - 0.5rem));
     -moz-transform: translate(calc(-80% - 0.5rem));
     -ms-transform: translate(calc(-80% - 0.5rem));
     -o-transform: translate(calc(-80% - 0.5rem));
-    opacity: 0.2;
   }
   25% {
     transform: translate(0);
+    opacity: 1;
     -webkit-transform: translate(0);
     -moz-transform: translate(0);
     -ms-transform: translate(0);
     -o-transform: translate(0);
-    opacity: 1;
   }
 }
 
@@ -101,29 +117,37 @@
   0% {
     transform: translate(calc(80% + 0.5rem));
     opacity: 0;
+    -webkit-transform: translate(calc(80% - 0.5rem));
+    -moz-transform: translate(calc(80% - 0.5rem));
+    -ms-transform: translate(calc(80% - 0.5rem));
+    -o-transform: translate(calc(80% - 0.5rem));
   }
   25% {
     transform: translate(0);
     opacity: 1;
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    -ms-transform: translate(0);
+    -o-transform: translate(0);
   }
 }
 
 @keyframes scrolling-right {
   0% {
     transform: translate(calc(80% + 0.5rem));
+    opacity: 0;
     -webkit-transform: translate(calc(80% - 0.5rem));
     -moz-transform: translate(calc(80% - 0.5rem));
     -ms-transform: translate(calc(80% - 0.5rem));
     -o-transform: translate(calc(80% - 0.5rem));
-    opacity: 0;
   }
   25% {
     transform: translate(0);
+    opacity: 1;
     -webkit-transform: translate(0);
     -moz-transform: translate(0);
     -ms-transform: translate(0);
     -o-transform: translate(0);
-    opacity: 1;
   }
 }
 
@@ -304,9 +328,6 @@ img {
 .about__title,
 .contact__title {
   -webkit-animation: scrolling-right linear;
-  -moz-animation: scrolling-right linear;
-  -ms-animation: scrolling-right linear;
-  -o-animation: scrolling-right linear;
           animation: scrolling-right linear;
   animation-timeline: view();
 }
@@ -314,9 +335,6 @@ img {
 .review__title {
   text-align: center;
   -webkit-animation: scrolling-right linear;
-  -moz-animation: scrolling-right linear;
-  -ms-animation: scrolling-right linear;
-  -o-animation: scrolling-right linear;
           animation: scrolling-right linear;
   animation-timeline: view();
 }
@@ -333,9 +351,6 @@ img {
   padding-bottom: 1rem;
   z-index: 3;
   -webkit-animation: scrolling-left linear;
-  -moz-animation: scrolling-left linear;
-  -ms-animation: scrolling-left linear;
-  -o-animation: scrolling-left linear;
           animation: scrolling-left linear;
   animation-timeline: view();
 }
@@ -379,9 +394,6 @@ img {
   text-transform: uppercase;
   z-index: 3;
   -webkit-animation: fade-in linear;
-  -moz-animation: fade-in linear;
-  -ms-animation: fade-in linear;
-  -o-animation: fade-in linear;
           animation: fade-in linear;
   animation-timeline: view();
 }
@@ -409,9 +421,6 @@ img {
   box-shadow: 1rem 1rem 2rem 0px #00000040;
   z-index: 5;
   -webkit-animation: fade-in linear;
-  -moz-animation: fade-in linear;
-  -ms-animation: fade-in linear;
-  -o-animation: fade-in linear;
           animation: fade-in linear;
   animation-timeline: view();
 }
@@ -450,9 +459,6 @@ img {
   height: 100%;
   z-index: 5;
   -webkit-animation: spreading-apart linear;
-  -moz-animation: spreading-apart linear;
-  -ms-animation: spreading-apart linear;
-  -o-animation: spreading-apart linear;
           animation: spreading-apart linear;
   animation-timeline: view();
 }
