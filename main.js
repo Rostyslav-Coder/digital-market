@@ -1,13 +1,14 @@
-// Функция для добавления анимации
+// Function to add Animation
 function addAnimation(el, animationName) {
+  // eslint-disable-next-line no-param-reassign
   el.style.animation = `${animationName} 3s forwards`;
 }
 
-// Создаем экземпляр IntersectionObserver
+// Create object IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      // Определяем, какую анимацию нужно применить
+      // Determining what animation to apply
       let animationName;
       if (entry.target.classList.contains('damper__about')
           || entry.target.classList.contains('damper__service')
@@ -25,13 +26,13 @@ const observer = new IntersectionObserver((entries) => {
         animationName = 'scrolling-right';
       }
 
-      // Добавляем анимацию
+      // Adding Animation
       addAnimation(entry.target, animationName);
     }
   });
-}, { threshold: 0.2 }); // Запускаем анимацию, когда 10% элемента видны во вьюпорте
+}, { threshold: 0.2 }); // Animation start, when 20% of element visible in viewport
 
-// Наблюдаем за каждым элементом
+// Watchimg for every element
 const objectList = [
   '.damper__about',
   '.damper__service',
